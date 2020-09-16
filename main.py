@@ -39,7 +39,7 @@ APP = Flask(__name__)
 
 def require_jwt(function):
     """
-    Decorator to check valid jwt is present.
+    Decorator to check valid jwt is present
     """
     @functools.wraps(function)
     def decorated_function(*args, **kws):
