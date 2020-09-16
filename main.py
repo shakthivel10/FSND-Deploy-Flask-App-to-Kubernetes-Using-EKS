@@ -58,7 +58,7 @@ def require_jwt(function):
 
 @APP.route('/', methods=['POST', 'GET'])
 def health():
-    return jsonify("Healthy")
+    return jsonify("Healthy!")
 
 
 @APP.route('/auth', methods=['POST'])
@@ -104,7 +104,7 @@ def decode_jwt():
 
 
 def _get_jwt(user_data):
-    exp_time = datetime.datetime.utcnow() + datetime.timedelta(weeks=2)
+    exp_time = datetime.datetime.utcnow() + datetime.timedelta(weeks=1)
     payload = {'exp': exp_time,
                'nbf': datetime.datetime.utcnow(),
                'email': user_data['email']}
